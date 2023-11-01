@@ -1,31 +1,19 @@
-
-// Circle.java
-
 import java.lang.Math;
 
-public class Circle {
+public class Circle extends Point {
     private final double pi = Math.PI;
     private double r = 0;
-    private Point center;
 
-    public Circle(double r, Point center) {
+    public Circle(double r, double x, double y) {
+        super(x, y);
         this.r = r;
-        this.center = center;
-    }
-
-    public Point getCenter() {
-        return this.center;
     }
 
     public double getR() {
         return this.r;
     }
 
-    public void setCenter(Point center) {
-        this.center = center;
-    }
-
-    public void setCenter(double r) {
+    public void setR(double r) {
         this.r = r;
     }
 
@@ -39,13 +27,14 @@ public class Circle {
 
     public boolean isAppartien(Point point) {
         double distance = Math
-                .sqrt(Math.pow((point.getX() - center.getX()), 2) + Math.pow((point.getY() - center.getY()), 2));
+                .sqrt(Math.pow((point.getX() - this.getX()), 2) + Math.pow((point.getY() - this.getY()), 2));
         if (distance <= this.r)
             return true;
         return false;
     }
 
     public void print() {
-        System.out.println("r: " + r + " x: " + center.getX() + " y: " + center.getY());
+        System.out.println("r: " + r + " x: " + this.getX() + " y: " + this.getY());
     }
+
 }

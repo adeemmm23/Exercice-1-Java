@@ -4,8 +4,7 @@
 public class Main {
     public static void main(String[] args) {
         Point point = new Point(2, 2);
-        Point center = new Point(0, 0);
-        Circle circle = new Circle(4, center);
+        Circle circle = new Circle(4, 0, 0);
 
         System.out.println(circle.getPerimetre());
         System.out.println(circle.isAppartien(point));
